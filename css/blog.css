@@ -1,0 +1,835 @@
+.footnotes-sep {
+    display: none;
+}
+img {
+    cursor: zoom-in;
+    transition: transform .3s;
+}
+
+img:hover {
+    -ms-transform: scale(1.5);
+    /* IE 9 */
+    -webkit-transform: scale(1.5);
+    /* Safari 3-8 */
+    transform: scale(1.5);
+}
+
+.inline-img {
+    margin-top: -57px;
+}
+
+img.round {
+    border-radius: 10px;
+}
+
+.mermaid {
+    font-size: 16px
+}
+
+.mermaid svg {
+    color: rgba(0, 0, 0, .75);
+    width: 100%;
+    max-width: 100%
+}
+
+.mermaid svg * {
+    font-family: Lato, Helvetica Neue, Helvetica, sans-serif
+}
+
+.mermaid .mermaid .label {
+    color: #333
+}
+
+.mermaid .node circle, .mermaid .node ellipse, .mermaid .node polygon, .mermaid .node rect {
+    fill: #eee;
+    stroke: #999;
+    stroke-width: 1px
+}
+
+.mermaid .node.clickable {
+    cursor: pointer
+}
+
+.mermaid .arrowheadPath {
+    fill: #333
+}
+
+.mermaid .edgePath .path {
+    stroke: #666;
+    stroke-width: 1.5px
+}
+
+.mermaid .edgeLabel {
+    background-color: #fff
+}
+
+.mermaid .cluster rect {
+    fill: #eaf2fb!important;
+    stroke: #26a!important;
+    stroke-width: 1px!important
+}
+
+.mermaid .cluster text {
+    fill: #333
+}
+
+.mermaid div.mermaidTooltip {
+    position: absolute;
+    text-align: center;
+    max-width: 200px;
+    padding: 2px;
+    font-family: trebuchet ms, verdana, arial;
+    font-size: 12px;
+    background: #eaf2fb;
+    border: 1px solid #26a;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 100
+}
+
+.mermaid .actor {
+    stroke: #999;
+    fill: #eee
+}
+
+.mermaid text.actor {
+    fill: #333;
+    stroke: none
+}
+
+.mermaid .actor-line {
+    stroke: #666
+}
+
+.mermaid .messageLine0 {
+    marker-end: "url(#arrowhead)"
+}
+
+.mermaid .messageLine0, .mermaid .messageLine1 {
+    stroke-width: 1.5;
+    stroke-dasharray: "2 2";
+    stroke: #333
+}
+
+.mermaid #arrowhead {
+    fill: #333
+}
+
+.mermaid #crosshead path {
+    fill: #333!important;
+    stroke: #333!important
+}
+
+.mermaid .messageText {
+    fill: #333;
+    stroke: none
+}
+
+.mermaid .labelBox {
+    stroke: #999;
+    fill: #eee
+}
+
+.mermaid .labelText, .mermaid .loopText {
+    fill: #fff;
+    stroke: none
+}
+
+.mermaid .loopLine {
+    stroke-width: 2;
+    stroke-dasharray: "2 2";
+    marker-end: "url(#arrowhead)";
+    stroke: #999
+}
+
+.mermaid .note {
+    stroke: #770;
+    fill: #ffa
+}
+
+.mermaid .noteText {
+    fill: #000;
+    stroke: none;
+    font-family: trebuchet ms, verdana, arial;
+    font-size: 14px
+}
+
+.mermaid .section {
+    stroke: none;
+    opacity: .2
+}
+
+.mermaid .section0, .mermaid .section2 {
+    fill: #80b3e6
+}
+
+.mermaid .section1, .mermaid .section3 {
+    fill: #fff;
+    opacity: .2
+}
+
+.mermaid .sectionTitle0, .mermaid .sectionTitle1, .mermaid .sectionTitle2, .mermaid .sectionTitle3 {
+    fill: #333
+}
+
+.mermaid .sectionTitle {
+    text-anchor: start;
+    font-size: 11px
+}
+
+.mermaid .grid .tick {
+    stroke: #e6e6e6;
+    opacity: .3;
+    shape-rendering: crispEdges
+}
+
+.mermaid .grid path {
+    stroke-width: 0
+}
+
+.mermaid .today {
+    fill: none;
+    stroke: #d42;
+    stroke-width: 2px
+}
+
+.mermaid .task {
+    stroke-width: 2
+}
+
+.mermaid .taskText {
+    text-anchor: middle;
+    font-size: 11px
+}
+
+.mermaid .taskTextOutsideRight {
+    fill: #333;
+    text-anchor: start;
+    font-size: 11px
+}
+
+.mermaid .taskTextOutsideLeft {
+    fill: #333;
+    text-anchor: end;
+    font-size: 11px
+}
+
+.mermaid .taskText0, .mermaid .taskText1, .mermaid .taskText2, .mermaid .taskText3 {
+    fill: #fff
+}
+
+.mermaid .task0, .mermaid .task1, .mermaid .task2, .mermaid .task3 {
+    fill: #26a;
+    stroke: #1a4d80
+}
+
+.mermaid .taskTextOutside0, .mermaid .taskTextOutside1, .mermaid .taskTextOutside2, .mermaid .taskTextOutside3 {
+    fill: #333
+}
+
+.mermaid .active0, .mermaid .active1, .mermaid .active2, .mermaid .active3 {
+    fill: #eee;
+    stroke: #1a4d80
+}
+
+.mermaid .activeText0, .mermaid .activeText1, .mermaid .activeText2, .mermaid .activeText3 {
+    fill: #333!important
+}
+
+.mermaid .done0, .mermaid .done1, .mermaid .done2, .mermaid .done3 {
+    stroke: #666;
+    fill: #bbb;
+    stroke-width: 2
+}
+
+.mermaid .doneText0, .mermaid .doneText1, .mermaid .doneText2, .mermaid .doneText3 {
+    fill: #333!important
+}
+
+.mermaid .crit0, .mermaid .crit1, .mermaid .crit2, .mermaid .crit3 {
+    stroke: #b1361b;
+    fill: #d42;
+    stroke-width: 2
+}
+
+.mermaid .activeCrit0, .mermaid .activeCrit1, .mermaid .activeCrit2, .mermaid .activeCrit3 {
+    stroke: #b1361b;
+    fill: #eee;
+    stroke-width: 2
+}
+
+.mermaid .doneCrit0, .mermaid .doneCrit1, .mermaid .doneCrit2, .mermaid .doneCrit3 {
+    stroke: #b1361b;
+    fill: #bbb;
+    stroke-width: 2;
+    cursor: pointer;
+    shape-rendering: crispEdges
+}
+
+.mermaid .activeCritText0, .mermaid .activeCritText1, .mermaid .activeCritText2, .mermaid .activeCritText3, .mermaid .doneCritText0, .mermaid .doneCritText1, .mermaid .doneCritText2, .mermaid .doneCritText3 {
+    fill: #333!important
+}
+
+.mermaid .titleText {
+    text-anchor: middle;
+    font-size: 18px;
+    fill: #333
+}
+
+.mermaid g.classGroup text {
+    fill: #999;
+    stroke: none;
+    font-family: trebuchet ms, verdana, arial;
+    font-size: 10px
+}
+
+.mermaid g.classGroup rect {
+    fill: #eee;
+    stroke: #999
+}
+
+.mermaid g.classGroup line {
+    stroke: #999;
+    stroke-width: 1
+}
+
+.mermaid .classLabel .box {
+    stroke: none;
+    stroke-width: 0;
+    fill: #eee;
+    opacity: .5
+}
+
+.mermaid .classLabel .label {
+    fill: #999;
+    font-size: 10px
+}
+
+.mermaid .relation {
+    stroke: #999;
+    stroke-width: 1;
+    fill: none
+}
+
+.mermaid #compositionEnd, .mermaid #compositionStart {
+    fill: #999;
+    stroke: #999;
+    stroke-width: 1
+}
+
+.mermaid #aggregationEnd, .mermaid #aggregationStart {
+    fill: #eee;
+    stroke: #999;
+    stroke-width: 1
+}
+
+.mermaid #dependencyEnd, .mermaid #dependencyStart, .mermaid #extensionEnd, .mermaid #extensionStart {
+    fill: #999;
+    stroke: #999;
+    stroke-width: 1
+}
+
+.mermaid .branch-label, .mermaid .commit-id, .mermaid .commit-msg {
+    fill: #d3d3d3;
+    color: #d3d3d3
+}
+
+@font-face {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://stackedit.io/static/fonts/lato-normal.27bd77b.woff) format("woff")
+}
+
+@font-face {
+    font-family: Lato;
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://stackedit.io/static/fonts/lato-normal-italic.f28f2d6.woff) format("woff")
+}
+
+@font-face {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://stackedit.io/static/fonts/lato-black.f80bda6.woff) format("woff")
+}
+
+@font-face {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://stackedit.io/static/fonts/RobotoMono-Regular.0b6a547.woff) format("woff")
+}
+
+.prism *, .token.pre.gfm * {
+    font-weight: inherit!important
+}
+
+.prism .token.cdata, .prism .token.comment, .prism .token.doctype, .prism .token.prolog, .token.pre.gfm .token.cdata, .token.pre.gfm .token.comment, .token.pre.gfm .token.doctype, .token.pre.gfm .token.prolog {
+    color: #708090
+}
+
+.prism .token.punctuation, .token.pre.gfm .token.punctuation {
+    color: #999
+}
+
+.prism .namespace, .token.pre.gfm .namespace {
+    opacity: .7
+}
+
+.prism .token.boolean, .prism .token.constant, .prism .token.deleted, .prism .token.number, .prism .token.property, .prism .token.symbol, .prism .token.tag, .token.pre.gfm .token.boolean, .token.pre.gfm .token.constant, .token.pre.gfm .token.deleted, .token.pre.gfm .token.number, .token.pre.gfm .token.property, .token.pre.gfm .token.symbol, .token.pre.gfm .token.tag {
+    color: #905
+}
+
+.prism .token.attr-name, .prism .token.builtin, .prism .token.char, .prism .token.inserted, .prism .token.selector, .prism .token.string, .token.pre.gfm .token.attr-name, .token.pre.gfm .token.builtin, .token.pre.gfm .token.char, .token.pre.gfm .token.inserted, .token.pre.gfm .token.selector, .token.pre.gfm .token.string {
+    color: #690
+}
+
+.prism .language-css .token.string, .prism .style .token.string, .prism .token.entity, .prism .token.operator, .prism .token.url, .token.pre.gfm .language-css .token.string, .token.pre.gfm .style .token.string, .token.pre.gfm .token.entity, .token.pre.gfm .token.operator, .token.pre.gfm .token.url {
+    color: #a67f59
+}
+
+.prism .token.atrule, .prism .token.attr-value, .prism .token.keyword, .token.pre.gfm .token.atrule, .token.pre.gfm .token.attr-value, .token.pre.gfm .token.keyword {
+    color: #07a
+}
+
+.prism .token.function, .token.pre.gfm .token.function {
+    color: #dd4a68
+}
+
+.prism .token.important, .prism .token.regex, .prism .token.variable, .token.pre.gfm .token.important, .token.pre.gfm .token.regex, .token.pre.gfm .token.variable {
+    color: #e90
+}
+
+.prism .token.bold, .prism .token.important, .token.pre.gfm .token.bold, .token.pre.gfm .token.important {
+    font-weight: 500
+}
+
+.prism .token.italic, .token.pre.gfm .token.italic {
+    font-style: italic
+}
+
+/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+
+html {
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+article, aside, footer, header, nav, section {
+    display: block
+}
+
+h1 {
+    font-size: 2em;
+    /* margin: .67em 0; */
+}
+
+figcaption, figure {
+    display: block
+}
+
+figure {
+    margin: 1em 40px
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+main {
+    display: block
+}
+
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+a {
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted
+}
+
+b, strong {
+    font-weight: inherit;
+    font-weight: bolder
+}
+
+code, kbd, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+dfn {
+    font-style: italic
+}
+
+mark {
+    background-color: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+audio, video {
+    display: inline-block
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+img {
+    border-style: none
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+button, input, optgroup, select, textarea {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0
+}
+
+button {
+    overflow: visible
+}
+
+button, select {
+    text-transform: none
+}
+
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+input {
+    overflow: visible
+}
+
+[type=checkbox], [type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+body, html {
+    background: #fefff8;
+    color: rgba(0, 0, 0, .85);
+    font-size: 16px;
+    font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
+    font-variant-ligatures: common-ligatures;
+    line-height: 1.67;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+blockquote, dl, ol, p, pre, ul {
+    margin: 1.2em 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1.8em 0;
+    line-height: 1.33;
+}
+
+h4 {
+    margin-left: 1.33em;
+}
+
+h1:after, h2:after {
+    content: "";
+    display: block;
+    position: relative;
+    top: .33em;
+    border-bottom: 1px solid hsla(0, 0%, 50%, .33)
+}
+
+ol ol, ol ul, ul ol, ul ul {
+    margin: 0
+}
+
+dt {
+    font-weight: 700
+}
+
+a {
+    color: #07a;
+    text-decoration: underline;
+    text-decoration-skip: ink
+}
+
+a:focus, a:hover {
+    text-decoration: none
+}
+
+code, pre, samp {
+    font-family: Roboto Mono, Lucida Sans Typewriter, Lucida Console, monaco, Courrier, monospace;
+    font-size: .85em
+}
+
+code *, pre *, samp * {
+    font-size: inherit
+}
+
+blockquote {
+    color: rgba(0, 0, 0, .5);
+    padding-left: 1.5em;
+    border-left: 5px solid rgba(0, 0, 0, .1)
+}
+
+code {
+    background-color: rgba(0, 0, 0, .05);
+    border-radius: 3px;
+    padding: 2px 4px
+}
+
+code:not([class]) {
+    color: #07a
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid hsla(0, 0%, 50%, .33);
+    margin: 2em 0
+}
+
+pre>code {
+    background-color: rgba(0, 0, 0, .05);
+    display: block;
+    padding: .5em;
+    -webkit-text-size-adjust: none;
+    overflow-x: auto;
+    white-space: pre
+}
+
+.toc ul {
+    list-style-type: none;
+    padding-left: 20px
+}
+
+table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td, th {
+    border-right: 1px solid #dcdcdc;
+    padding: 8px 12px
+}
+
+td:last-child, th:last-child {
+    border-right: 0
+}
+
+td {
+    border-top: 1px solid #dcdcdc
+}
+
+mark {
+    background-color: #f8f840
+}
+
+kbd {
+    font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
+    background-color: #fff;
+    border: 1px solid rgba(63, 63, 63, .25);
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(63, 63, 63, .25);
+    color: #333;
+    display: inline-block;
+    font-size: .8em;
+    margin: 0 .1em;
+    padding: .1em .6em;
+    white-space: nowrap
+}
+
+abbr[title] {
+    border-bottom: 1px dotted #777;
+    cursor: help
+}
+
+img {
+    max-width: 100%
+}
+
+.task-list-item {
+    list-style-type: none
+}
+
+.task-list-item-checkbox {
+    margin: 0 .2em 0 -1.3em
+}
+
+.footnote {
+    font-size: .8em;
+    position: relative;
+    top: -.25em;
+    vertical-align: top
+}
+
+.page-break-after {
+    page-break-after: always
+}
+
+.abc-notation-block {
+    overflow-x: auto!important
+}
+
+.stackedit__html {
+    margin-bottom: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 750px
+}
+
+.stackedit__toc ul {
+    padding: 0
+}
+
+.stackedit__toc ul a {
+    margin: .5rem 0;
+    padding: .5rem 1rem
+}
+
+.stackedit__toc ul ul {
+    color: #888;
+    font-size: .9em
+}
+
+.stackedit__toc ul ul a {
+    margin: 0;
+    padding: .1rem 1rem
+}
+
+.stackedit__toc li {
+    display: block;
+    margin-left: .75em
+}
+
+.stackedit__toc a {
+    display: block;
+    color: inherit;
+    text-decoration: none
+}
+
+.stackedit__toc a:active, .stackedit__toc a:focus, .stackedit__toc a:hover {
+    background-color: rgba(0, 0, 0, .075);
+    border-radius: 3px
+}
+
+.stackedit__left {
+    position: fixed;
+    display: none;
+    width: 300px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none
+}
+
+@media (min-width:1060px) {
+    .stackedit__left {
+        display: block
+    }
+}
+
+.stackedit__right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0
+}
+
+@media (min-width:1060px) {
+    .stackedit__right {
+        left: 300px;
+        border-left: 1px solid #bdbdbd
+    }
+}
+
+.stackedit--pdf blockquote {
+    border-left-color: #ececec
+}
+
+.stackedit--pdf .stackedit__html {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none
+}
+
+a.active {
+    color: #cb6662
+}
+
+h1.active, h2.active, h3.active, h4.active {
+    color: #cb6662
+}

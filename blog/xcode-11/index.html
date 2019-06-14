@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <link rel="stylesheet" type="text/css" href="https://eralpsahin.github.io/css/blog.css">
+    
+    
+  <title>Xcode 11 | Eralp Sahin</title>
+</head>
+    
+    
+    
+<body class="stackedit">
+        <div class="stackedit__left">
+            <div class="stackedit__toc">
+                
+<ul>
+<li><a href="#xcode-11-wiki">XCode 11 Wiki</a>
+<ul>
+<li><a href="#new-features">New Features</a>
+<ul>
+<li><a href="#minimap">Minimap</a></li>
+<li><a href="#editor-focus">Editor Focus</a></li>
+<li><a href="#documentation">Documentation</a></li>
+</ul>
+</li>
+<li><a href="#swift-package-manager">Swift Package Manager</a>
+<ul>
+<li><a href="#recall-wwdc-2018">Recall WWDC 2018</a>
+<ul>
+<li><a href="#commands">Commands</a></li>
+<li><a href="#demo">Demo</a></li>
+</ul>
+</li>
+<li><a href="#swiftpm-integration">SwiftPM Integration</a></li>
+</ul>
+</li>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div class="stackedit__right">
+            <div class="stackedit__html">
+                <h1 id="xcode-11-wiki">XCode 11 Wiki</h1>
+<blockquote>
+<p>My personal notes on</p>
+<ol>
+<li>Getting Started with XCode</li>
+<li>What’s new in XCode 11</li>
+<li>Debugging in Xcode 11</li>
+</ol>
+<p>sessions  from WWDC 2019.</p>
+</blockquote>
+<h2 id="new-features">New Features</h2>
+<h3 id="minimap">Minimap</h3>
+ <img src="/images/minimap.png" alt="Minimap" width="300" class="inline-img round" align="right">
+<ul>
+<li>Like Jump Bar, you can add a marker to the minimap.<code>// MARK: UISceneSession Lifecycle</code>. Additionally, <code>// MARK: -</code> adds a separation line similar to Jump Bar. See <a href="https://stackoverflow.com/questions/35963128/swift-understanding-mark">this</a> SO answer for Jump Bar visualization.</li>
+<li>While hovering over Minimap, press and hold <strong>Command</strong> and XCode will show all the types, instances, and declarations.</li>
+<li>When text searching, Minimap also highlights the words and darkens the rest of the map.</li>
+</ul>
+<h3 id="editor-focus">Editor Focus</h3>
+ <img src="/images/focus.png" alt="Focus Button" width="300" class="inline-img round" align="right">
+<p>When multiple source editors are open a button will appear on right of close button. You can click on the <em>focus</em> button to focus on a single editor making it take up the whole editor screen.</p>
+<h3 id="documentation">Documentation</h3>
+<img src="/images/documentation.png" width="450" class="inline-img round" align="right" alt="Documentation">
+<ul>
+<li>Holding <strong>Command</strong> click on any kind of declaration and click <em>Add Documentation</em> to create documentation.</li>
+<li>Additionally, holding <strong>Command</strong> click on a variable name and then <em>Edit All in Scope</em> which will sync the edit to both the scope and the documentation.</li>
+</ul>
+<h2 id="swift-package-manager">Swift Package Manager</h2>
+<p>SwiftPM was introduced in WWDC 2018<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup> but the integration at least to me seemed too cumbersome. Similar to SwiftUI, declarative syntax is preferred. C, C++, and Objective-C can be compiled in SwiftPM as well but, mixing languages with Swift in a <em>target</em> is not supported<sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup>.</p>
+<h3 id="recall-wwdc-2018">Recall WWDC 2018</h3>
+<h4 id="commands">Commands</h4>
+<ul>
+<li><code>swift build</code> to build your package.</li>
+<li><code>swift run</code> to run its executable products.</li>
+<li><code>swift test</code> to execute tests. Use <code>--parallel</code> flag to execute tests in parallel.</li>
+<li><code>swift package</code> for various non-build operations on the package. For example <code>init</code> to create a library package and <code>init --type executable</code> for an executable package.</li>
+</ul>
+<p>Swift Packages consists of <em>products</em>, <em>dependencies</em>, and <em>targets</em>. <code>Package.swift</code> manifest file is used to configure these parts.<br>
+<img src="/images/package.swift.png" width="400" alt="Package.swift" class="round"></p>
+<ul>
+<li><strong>Dependencies</strong>: Packages you can integrate in <code>Package.swift</code>  file.</li>
+<li><strong>Targets</strong>: Describe how to build set of source files into either a module or a test suite.</li>
+<li><strong>Products</strong>: Executables or libraries, assembled from one or more targets.</li>
+</ul>
+<h4 id="demo">Demo</h4>
+<p>Creating an executable package;</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">mkdir</span> MyPackage <span class="token operator">&amp;&amp;</span> <span class="token function">cd</span> MyPackage
+swift package init --type executable
+</code></pre>
+<p>The directory structure will be as the following;</p>
+<pre class=" language-bash"><code class="prism  language-bash">├── Package.swift
+├── README.md
+├── Sources
+│   └── MyPackage
+│       └── Hello.swift
+└── Tests
+    ├── HelloTests
+    │   └── MyPackageTests.swift
+	    └── XCTestManifests.swift
+    └── LinuxMain.swift
+</code></pre>
+<p>Now you can compile and run the executable template with <code>swift run</code>.</p>
+<h3 id="swiftpm-integration">SwiftPM Integration</h3>
+<blockquote>
+<p>This year we have fully integrated <em>SwiftPM</em> with XCode. You can use packages to build apps for all of the platforms.</p>
+</blockquote>
+<p>This announcement was what I was looking for in WWDC 2019. The potential was there but it was hard to make use of <em>SwiftPM</em> because of the limitations before.</p>
+<p>To add a package, navigate to the project editor and simply use <strong>Swift Packages</strong> tab.</p>
+<img src="/images/add-package.gif" width="800" alt="Add Package Gif" class="round">
+<h2 id="references">References</h2>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://developer.apple.com/videos/play/wwdc2018/411/">Getting to Know SwiftPM in WWDC 2018</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://github.com/apple/swift-package-manager/blob/master/Documentation/Usage.md">SwiftPM Documentation on GitHub</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+            </div>
+        </div>
+    </body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://eralpsahin.github.io/js/blog.js"></script>
+</html>
