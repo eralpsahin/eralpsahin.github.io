@@ -1,3 +1,5 @@
+// TODO: Add comments
+
 $(function () {
     $(window).scroll(function () {
         $(":header[id]").each(function () {
@@ -17,6 +19,7 @@ $("img").each(function () {
         window.open(this.src);
     });
 });
+
 $("div.stackedit__toc a").click(function (e) {
     e.preventDefault();
     let scrollTo = $(this).attr('href');
@@ -24,6 +27,7 @@ $("div.stackedit__toc a").click(function (e) {
         scrollTop: $(scrollTo).offset().top - 98
     }, 100);
 });
+
 $("sup.footnote-ref a").click(function (e) {
     e.preventDefault();
     let footnoteID = $(this).attr('href');
@@ -36,6 +40,7 @@ $("sup.footnote-ref a").click(function (e) {
             }
         });
 });
+
 $("a.footnote-backref").click(function (e) {
     e.preventDefault();
     
