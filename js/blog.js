@@ -2,64 +2,66 @@
 
 $(function () {
     $(window).scroll(function () {
-        $(":header[id]").each(function () {
+        $(':header[id]').each(function () {
             if ($(window).scrollTop() >= $(this).offset().top - 100) {
-                let a = $(this).attr("id");
-                $("a").removeClass("active");
-                $(":header").removeClass("active");
-                $('a[href="#' + a + '"]').addClass("active");
-                $(this).addClass("active");
+                let a = $(this).attr('id');
+                $('a').removeClass('active');
+                $(':header').removeClass('active');
+                $('a[href="#' + a + '"]').addClass('active');
+                $(this).addClass('active');
             }
         })
     })
 });
 
-$("img").each(function () {
+$('img').each(function () {
     $(this).click(function () {
         window.open(this.src);
     });
 });
 
-$("div.stackedit__toc a").click(function (e) {
-    e.preventDefault();
-    let scrollTo = $(this).attr('href');
-    $('html, body').animate({
-        scrollTop: $(scrollTo).offset().top - 98
-    }, 100);
-});
-
-$("sup.footnote-ref a").click(function (e) {
-    e.preventDefault();
-    let footnoteID = $(this).attr('href');
-    $('html, body').animate({
-        scrollTop: $(footnoteID).children("p").children("a").first().offset().top,
-    }, {
-            duration: 100,
-            always: function () {
-                $(footnoteID).children("p").children("a").first().addClass("active");
-            }
-        });
-});
-
-$("a.footnote-backref").click(function (e) {
-    e.preventDefault();
-    
+$('a.footnote-backref').click(function (e) {
+    e.stopImmediatePropagation();
     // Escape ':' character on duplicate references
     let footnoteID = $(this).attr('href').substr(1);
     let citation = $(document.getElementById(footnoteID));
-
     $('html, body').animate({
         scrollTop: citation.offset().top - 98,
-
     }, 100);
+
+    setTimeout(function () {
+        citation.addClass('active');
+    }, 150);
 });
 
-$("a").click(function (e) {
-    let href = $(this).attr('href');
+$('sup.footnote-ref a').click(function (e) {
+    e.stopImmediatePropagation();
 
-    // Handle outgoing links in new tab
-    if (href.includes("https://") || href.includes("http://")) {
+    let footnoteID = $(this).attr('href');
+    let id = $(this).attr("id");
+
+    // Animate to the footnote Reference
+    $('html, body').animate({
+        scrollTop: $(footnoteID).children('p').children('a').first().offset().top,
+    }, 100);
+
+    // Color the active Reference after scrolling ends
+    setTimeout(function () {
+        $(footnoteID).children('p').children('a').first().addClass('active');
+        $('a[href="#' + id + '"]').addClass('active');
+    }, 150);
+});
+
+$('a').click(function (e) {
+    let ref = $(this).attr('href');
+    if (ref.charAt(0) === '#') { // Current Page reference
         e.preventDefault();
-        window.open(href, '_blank'); 
+        $('html, body').animate({
+            scrollTop: $(ref).offset().top - 98
+        }, 100);
+    } else if (!(location.hostname === this.hostname
+        || !this.hostname.length)) { // External pages
+        e.preventDefault();
+        window.open(ref, '_blank');
     }
 });
