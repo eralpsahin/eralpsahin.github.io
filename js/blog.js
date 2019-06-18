@@ -1,5 +1,11 @@
 // TODO: Add comments
 
+document.addEventListener('DOMContentLoaded', function () {
+    new Zooming({
+        enableGrab: false
+    }).listen('.zoomable')
+})
+
 $(function () {
     $(window).scroll(function () {
         $(':header[id]').each(function () {
@@ -14,14 +20,9 @@ $(function () {
     })
 });
 
-$('img').each(function () {
-    $(this).click(function () {
-        window.open(this.src);
-    });
-});
-
 $('a.footnote-backref').click(function (e) {
     e.stopImmediatePropagation();
+    e.preventDefault();
     // Escape ':' character on duplicate references
     let footnoteID = $(this).attr('href').substr(1);
     let citation = $(document.getElementById(footnoteID));
@@ -36,7 +37,7 @@ $('a.footnote-backref').click(function (e) {
 
 $('sup.footnote-ref a').click(function (e) {
     e.stopImmediatePropagation();
-
+    e.preventDefault();
     let footnoteID = $(this).attr('href');
     let id = $(this).attr("id");
 

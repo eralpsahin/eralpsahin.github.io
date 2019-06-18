@@ -661,16 +661,19 @@ mark {
 
 kbd {
     font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
-    background-color: #fff;
-    border: 1px solid rgba(63, 63, 63, .25);
+    background-color: #fafbfc;
+    border: 1px solid #c6cbd1;
+    border-bottom-color: #959da5;
     border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(63, 63, 63, .25);
-    color: #333;
+    box-shadow: inset 0 -1px 0 #959da5;
+    color: #444d56;
     display: inline-block;
-    font-size: .8em;
+    font-size: 11px;
     margin: 0 .1em;
-    padding: .1em .6em;
-    white-space: nowrap
+    padding: 3px 5px;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: 10px;
 }
 
 abbr[title] {
@@ -807,25 +810,19 @@ h1.active, h2.active, h3.active, h4.active {
 .footnotes-sep {
     display: none
 }
-img {
-    cursor: zoom-in;
-    transition: transform .3s
+
+@media (min-width:768px) {
+    .inline-img {
+        margin-top: -57px
+    }
 }
 
-/*
-img:hover {
-    -ms-transform: scale(1.5);
-    /* IE 9 
-    -webkit-transform: scale(1.5);
-    /* Safari 3-8 
-    transform: scale(1.5)
-}
-*/
-
-.inline-img {
-    margin-top: -57px
+@media (max-width:768px) {
+    .inline-img {
+        float: none
+    }
 }
 
 img.round {
-    border-radius: 10px
+    border-radius: 4px
 }
