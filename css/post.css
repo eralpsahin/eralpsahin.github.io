@@ -596,3 +596,11 @@ h1:after, h2:after {
 img.round {
     border-radius: 4px
 }
+
+.navigation a:hover {
+    background-color: rgba(0,0,0,0);
+}
+
+.navigation a {
+    color: #07a;
+}

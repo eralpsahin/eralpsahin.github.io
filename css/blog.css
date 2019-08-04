@@ -179,6 +179,14 @@ footer .theme-by {
   .post-preview .post-title {
     font-size: 14px;
   }
+  .post-preview .row {
+    margin-left: 125px;
+  }
+}
+
+.ciu-preview {
+    margin-top: 300px;
+    border-top: 1px solid #bdbdbd;
 }
 
 .intro-header.big-img {
