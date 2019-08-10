@@ -92,13 +92,29 @@ hr.small {
 /* --- Footer --- */
 
 footer {
-  padding: 30px 0;
-  padding-right: 30px;
+  padding: 20px 30px 30px 0px;
   background: #F5F5F5;
   border-top: 1px #EAEAEA solid;
-  margin-top: 50px;
+  margin-top: 120px;
   font-size: 14px;
   width: calc(100vw);
+}
+
+@media only screen and (min-width: 532px) and (max-width: 768px) {
+  footer {
+    margin-top:  120px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+  footer {
+    margin-top:  70px;
+  }
+}
+@media only screen and (min-width: 990px) {
+  footer {
+    margin-top:  100px;
+  }
 }
 
 footer a {
@@ -175,14 +191,21 @@ footer .theme-by {
   text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 456px) {
+  .post-preview .row {
+    margin-left: 70px;
+  }
+}
+
+@media only screen and (min-width: 676px) {
   .post-preview .post-title {
     font-size: 14px;
   }
   .post-preview .row {
-    margin-left: 125px;
+    margin-left: 130px;
   }
 }
+
 
 .ciu-preview {
     margin-top: 300px;
@@ -264,10 +287,6 @@ footer .theme-by {
 
 .navbar-header .navbar-inactive-lang {
   color: #888;
-}
-
-.navbar-nav {
-  max-width: 100px;
 }
 
 @media only screen and (max-width: 767px) {

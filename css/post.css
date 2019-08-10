@@ -537,7 +537,7 @@ img {
     -ms-overflow-style: none
 }
 
-@media (min-width:1060px) {
+@media (min-width:768px) {
     .stackedit__left {
         display: block
     }
@@ -550,7 +550,7 @@ img {
     left: 0
 }
 
-@media (min-width:1060px) {
+@media (min-width:768px) {
     .stackedit__right {
         left: 300px;
         border-left: 1px solid #bdbdbd
@@ -600,4 +600,8 @@ img.round {
 
 .navigation a:hover {
     background-color: rgba(0,0,0,0);
+}
+
+#menu {
+    width: 200px !important;
 }
